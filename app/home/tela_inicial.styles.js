@@ -43,9 +43,15 @@ const Styles = StyleSheet.create({
     width: 120,
     height: 10
   },
-  iconDelete:{
+  flexEnd:{
     alignItems: 'flex-end'
-  }
+  },
+  input: {
+    margin: 15,
+    height: 40,
+    borderColor: '#7a42f4',
+    borderWidth: 1
+ },
 });
 
 

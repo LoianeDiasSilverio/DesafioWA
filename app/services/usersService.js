@@ -9,7 +9,6 @@ export default class UsersService {
                 const response = await axios.get(url);
                 resolve(response);
             } catch(error){
-                console.log(error)
                 reject(new Error('Ocorreu um erro ao recuperar usuarios'))
             }
         })
