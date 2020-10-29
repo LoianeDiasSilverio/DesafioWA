@@ -32,12 +32,16 @@ class TelaInicial extends Component {
 
     users.data.forEach(async (user, index) => {
       if(index < 10){
-        // FAVOR COMENTAR DESTA LINHA
-          const responseFollower = await new FollowService().getUserFollowerRequest(user.followers_url);
-          const responseFollowing = await new FollowService().getUserFollowerRequest(user.following_url);
+        // DESCOMENTAR DESTA LINHA
+          // const responseFollower = await new FollowService().getUserFollowerRequest(user.followers_url);
+          // const responseFollowing = await new FollowService().getUserFollowerRequest(user.following_url);
+          // const follower = responseFollower.data.length;
+          // const following = responseFollowing.data.length;
+        // ATE ESTA LINHA PARA TESTAR COM REQUISICAO
 
-          const follower = responseFollower.data.length;
-          const following = responseFollowing.data.length;
+          // MOCK POIS ESTA DANDO LIMITE DE REQUISICOES EXCEDIDA
+          const follower = 30;
+          const following = 30;
 
           const userObj = {
             follower,
@@ -46,12 +50,6 @@ class TelaInicial extends Component {
           }
         
          list.push(userObj);
-        // ATE ESTA LINHA CASO O SERVIÇO DE FOLLOW COMEÇAR A DAR LIMITE DE REQUISÇÕES EXCEDIDAS 
-        // OBS: COMENTAR TB NO RENDER
-
-        // E DESCOMENTAR A LINHA ABAIXO
-        //  list.push(user);
-        
       }
     })
     
@@ -140,7 +138,7 @@ class TelaInicial extends Component {
           <View style={Styles.flexEnd}>
             <View style={Styles.row}>
               <Text style={Styles.title}>Followers:</Text>
-              <Text style={Styles.textInformative}>{item.followers}</Text>
+              <Text style={Styles.textInformative}>{item.follower}</Text>
             </View>
             <View style={Styles.row}>
               <Text style={Styles.title}>Following:</Text>
